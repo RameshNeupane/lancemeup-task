@@ -1,7 +1,12 @@
-type columnData = {
+export type columnItemData = {
   id: string;
   title: string;
-  children: string[];
+};
+
+export type columnData = {
+  id: string;
+  title: string;
+  children: columnItemData[];
 };
 
 export type ColumnProps = {
@@ -9,9 +14,11 @@ export type ColumnProps = {
 };
 
 export type ColumnItemsListProps = {
-  items: string[];
+  items: columnItemData[];
+  colId: string;
 };
 
 export type ColumnItemProps = {
-  item: string;
+  item: columnItemData;
+  index: number;
 };

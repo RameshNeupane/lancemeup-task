@@ -2,16 +2,57 @@ export const columns = [
   {
     id: "col-a",
     title: "Column A",
-    children: ["A1", "A2", "A3"],
+    children: [
+      {
+        id: "a1",
+        title: "A1",
+      },
+      {
+        id: "a2",
+        title: "A2",
+      },
+      {
+        id: "a3",
+        title: "A3",
+      },
+    ],
   },
   {
     id: "col-b",
     title: "Column B",
-    children: ["B1", "B2", "B3"],
+    children: [
+      {
+        id: "b1",
+        title: "B1",
+      },
+      {
+        id: "b2",
+        title: "B2",
+      },
+      {
+        id: "b3",
+        title: "B3",
+      },
+    ],
   },
   {
     id: "col-c",
     title: "Column C",
-    children: ["C1", "C2", "C3"],
+    children: [
+      {
+        id: "c1",
+        title: "C1",
+      },
+      {
+        id: "c2",
+        title: "C2",
+      },
+      {
+        id: "c3",
+        title: "C3",
+      },
+    ],
   },
 ];
+
+export const columnsOrder = ["col-a", "col-b", "col-c"];
