@@ -1,12 +1,20 @@
-import { useState } from "react";
 import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 
 import Column from "./Column";
 import { columns, columnsOrder } from "@/utils/dummy-data";
+import { columnData } from "@/types/column";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const DnDContainer = () => {
-  const [columnsData, setColumnsData] = useState(columns);
-  const [colsOrder, setColsOrder] = useState(columnsOrder);
+  const [columnsData, setColumnsData] = useLocalStorage<columnData[]>(
+    "colsData",
+    columns
+  );
+
+  const [colsOrder, setColsOrder] = useLocalStorage<string[]>(
+    "colsOrder",
+    columnsOrder
+  );
 
   const onDragEnd = (result: DropResult) => {
     const { source, destination, type } = result;
@@ -34,14 +42,14 @@ const DnDContainer = () => {
       // remove dragged item from the source column
       const draggedItem = copyOfColumnsData[
         copyOfColumnsOrder.indexOf(source.droppableId)
-      ].children.splice(source.index, 1);
+      ].children.splice(source.index, 1)[0];
 
       // add dragged item into the destination column
       copyOfColumnsData[
         copyOfColumnsOrder.indexOf(destination.droppableId)
-      ].children.splice(destination.index, 0, draggedItem[0]);
+      ].children.splice(destination.index, 0, draggedItem);
 
-      // set new data state
+      // update state
       setColumnsData(copyOfColumnsData);
       return;
     }
@@ -54,8 +62,9 @@ const DnDContainer = () => {
       copyOfColumnsData.splice(destination.index, 0, draggedColumn);
       copyOfColumnsOrder.splice(destination.index, 0, draggedColumnId);
 
-      setColumnsData([...copyOfColumnsData]);
-      setColsOrder([...copyOfColumnsOrder]);
+      // update state
+      setColumnsData(copyOfColumnsData);
+      setColsOrder(copyOfColumnsOrder);
       return;
     }
   };
