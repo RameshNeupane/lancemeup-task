@@ -11,6 +11,7 @@ export type columnData = {
 
 export type ColumnProps = {
   column: columnData;
+  index: number;
 };
 
 export type ColumnItemsListProps = {
