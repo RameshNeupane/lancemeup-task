@@ -1,14 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+import { userStateType } from "../../types/users";
 import { RootState } from "../../app/root-reducer";
-
-const USER_URL = "https://jsonplaceholder.typicode.com/users";
-
-type userStateType = {
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error?: string | null;
-  data: {}[];
-};
 
 const initialState: userStateType = {
   status: "idle", // idle | loading | succeeded | failed
@@ -17,7 +11,7 @@ const initialState: userStateType = {
 };
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
-  const response = await axios.get(USER_URL);
+  const response = await axios.get(import.meta.env.VITE_USER_URL);
   return response.data;
 });
 

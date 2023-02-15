@@ -15,7 +15,7 @@ const WorkspaceLayout = () => {
   return (
     <div className="w-screen h-screen flex">
       {/* workspace sidebar */}
-      <div className=" w-56 h-full border-r-2 border-r-slate-600 flex flex-col justify-start items-center gap-8 py-4">
+      <div className=" w-60 h-full border-r-2 border-r-slate-600 flex flex-col justify-start items-center gap-8 py-4">
         <HomeLink />
         <div className=" flex flex-col items-center justify-center w-full gap-2 py-4 border-y-2 border-y-slate-600">
           <WorkspaceSidebarLink url="/workspace">
@@ -34,7 +34,7 @@ const WorkspaceLayout = () => {
       </div>
 
       {/* workspace outlet */}
-      <div className="p-8">
+      <div className="w-full p-8">
         <Outlet />
       </div>
     </div>
