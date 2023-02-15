@@ -1,7 +1,8 @@
 import withProtectRoute from "./hoc/withProtectRoute";
-import { Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import HomeLink from "./HomeLink";
+import WorkspaceSidebarLink from "./WorkspaceSidebarLink";
 
 const WorkspaceLayout = () => {
   const navigate = useNavigate();
@@ -12,9 +13,18 @@ const WorkspaceLayout = () => {
   };
 
   return (
-    <div>
-      <div className=" flex items-center justify-between py-4 px-8 border-b-2 border-b-slate-600">
+    <div className="w-screen h-screen flex">
+      {/* workspace sidebar */}
+      <div className=" w-56 h-full border-r-2 border-r-slate-600 flex flex-col justify-start items-center gap-8 py-4">
         <HomeLink />
+        <div className=" flex flex-col items-center justify-center w-full gap-2 py-4 border-y-2 border-y-slate-600">
+          <WorkspaceSidebarLink url="/workspace">
+            Dashboard
+          </WorkspaceSidebarLink>
+          <WorkspaceSidebarLink url="/workspace/users">
+            Users
+          </WorkspaceSidebarLink>
+        </div>
         <button
           onClick={handleLogout}
           className="w-max h-max bg-fuchsia-900 text-center py-2 px-4 rounded hover:bg-fuchsia-700 transition-colors ease-in duration-200"
@@ -22,7 +32,11 @@ const WorkspaceLayout = () => {
           Logout
         </button>
       </div>
-      <Outlet />
+
+      {/* workspace outlet */}
+      <div className="p-8">
+        <Outlet />
+      </div>
     </div>
   );
 };

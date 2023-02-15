@@ -6,6 +6,7 @@ import Explore from "./pages/explore";
 import Workspace from "./pages/workspace";
 import HomeLayout from "./components/HomeLayout";
 import WorkspaceLayout from "./components/WorkspaceLayout";
+import UsersList from "./features/users/components/UsersList";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/workspace" element={<WorkspaceLayout />}>
             <Route index element={<Workspace />} />
+            <Route path="users" element={<UsersList />} />
           </Route>
         </Routes>
       </BrowserRouter>
