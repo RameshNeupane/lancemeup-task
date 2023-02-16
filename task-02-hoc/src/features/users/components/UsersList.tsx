@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import UserExcerpt from "./UserExcerpt";
-import withProtectRoute from "../../../components/hoc/withProtectRoute";
+import withProtectRoute from "@/components/hoc/withProtectRoute";
 import { getAllUsers, getUsersError, getUsersStatus } from "../usersSlice";
 
 const UsersList = () => {

@@ -1,8 +1,8 @@
-import withProtectRoute from "./hoc/withProtectRoute";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import withProtectRoute from "../hoc/withProtectRoute";
+import { Outlet, useNavigate } from "react-router-dom";
 
-import HomeLink from "./HomeLink";
-import WorkspaceSidebarLink from "./WorkspaceSidebarLink";
+import HomeLink from "../links/HomeLink";
+import WorkspaceSidebarLink from "../links/WorkspaceSidebarLink";
 
 const WorkspaceLayout = () => {
   const navigate = useNavigate();

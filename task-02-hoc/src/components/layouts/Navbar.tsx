@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import HomeLink from "./HomeLink";
+import HomeLink from "../links/HomeLink";
 
 const Navbar = () => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");

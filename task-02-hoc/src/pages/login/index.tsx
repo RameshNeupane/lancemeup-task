@@ -1,5 +1,5 @@
-import HomeLink from "../../components/HomeLink";
-import LoginForm from "../../components/LoginForm";
+import HomeLink from "@/components/links/HomeLink";
+import LoginForm from "@/components/forms/LoginForm";
 
 const Login = () => {
   return (

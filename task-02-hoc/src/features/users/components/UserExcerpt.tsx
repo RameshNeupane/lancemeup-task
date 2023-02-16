@@ -1,7 +1,7 @@
 import React from "react";
 
-import User from "../../../components/icons/User";
-import { UserExcerptProps } from "../../../types/users";
+import User from "@/components/icons/User";
+import { UserExcerptProps } from "@/types/users";
 
 const UserExcerpt: React.FC<UserExcerptProps> = ({ user }) => {
   return (

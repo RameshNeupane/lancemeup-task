@@ -1,10 +1,7 @@
 import React, { ReactNode } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-type WorkspaceSidebarLinkProps = {
-  url: string;
-  children: ReactNode;
-};
+import { WorkspaceSidebarLinkProps } from "@/types/props";
 
 const WorkspaceSidebarLink: React.FC<WorkspaceSidebarLinkProps> = ({
   url,

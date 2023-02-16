@@ -4,9 +4,9 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Explore from "./pages/explore";
 import Workspace from "./pages/workspace";
-import HomeLayout from "./components/HomeLayout";
-import WorkspaceLayout from "./components/WorkspaceLayout";
+import HomeLayout from "./components/layouts/HomeLayout";
 import UsersList from "./features/users/components/UsersList";
+import WorkspaceLayout from "./components/layouts/WorkspaceLayout";
 
 const App = () => {
   return (

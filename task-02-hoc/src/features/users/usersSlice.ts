@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { userStateType } from "../../types/users";
-import { RootState } from "../../app/root-reducer";
+import { userStateType } from "@/types/users";
+import { RootState } from "@/app/root-reducer";
 
 const initialState: userStateType = {
   status: "idle", // idle | loading | succeeded | failed
@@ -10,6 +10,7 @@ const initialState: userStateType = {
   data: [],
 };
 
+// fetch users
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await axios.get(import.meta.env.VITE_USER_URL);
   return response.data;

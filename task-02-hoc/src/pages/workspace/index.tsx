@@ -1,4 +1,4 @@
-import withProtectRoute from "../../components/hoc/withProtectRoute";
+import withProtectRoute from "@/components/hoc/withProtectRoute";
 
 const Workspace = () => {
   return (
